@@ -1,0 +1,19 @@
+{
+	"name": "set-up-netlify-cms",
+	"version": "0.0.1",
+	"author": {
+		"name": "Imed Adel",
+		"email": "aadelimed@gmail.com",
+		"url": "https://imedadel.me"
+	},
+	"license": "MIT",
+	"homepage": "https://github.com/ImedAdel/gtsbx",
+	"repository": "https://github.com/ImedAdel/gtsbx",
+	"scripts": {
+		"start": "node cli.js"
+	},
+	"dependencies": {
+		"fs-extra": "^8.1.0",
+		"meow": "^5.0.0"
+	}
+}

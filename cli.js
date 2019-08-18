@@ -2,7 +2,7 @@
 'use strict'
 
 const meow = require(`meow`)
-const fs = require(`fs-extra`)
+const setUpNetlifyCMS = require(`.`)
 
 const cli = meow(
 	`
@@ -29,3 +29,5 @@ const cli = meow(
 
 console.log(cli.input[0], cli.flags)
 if (!cli.flags.u || !cli.flags.r) console.error(`Missing username or repository.`)
+
+setUpNetlifyCMS()

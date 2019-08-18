@@ -30,4 +30,4 @@ const cli = meow(
 console.log(cli.input[0], cli.flags)
 if (!cli.flags.u || !cli.flags.r) console.error(`Missing username or repository.`)
 
-setUpNetlifyCMS()
+setUpNetlifyCMS(cli.flags.username, cli.flags.repository)

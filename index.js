@@ -7,10 +7,17 @@ const installDependencies = async () => {
 	])
 	console.log(stdout)
 }
-const createNetlifyConfig = async () => {
+
+/**
+ * Generates a YAML config file for Netlify CMS in `static/admin/`
+ * @param {string} username GitHub username
+ * @param {string} repository GitHub repository
+ */
+const createNetlifyConfig = async (username, repository) => {
 	const data = `
 		backend:
-			name: test-repo
+			name: github
+			repo: ${username}/${repository}
 
 		media_folder: static/assets
 		public_folder: assets
@@ -30,9 +37,14 @@ const createNetlifyConfig = async () => {
 	await fs.outputFile(`static/admin/config.yml`, data)
 }
 
-const main = async () => {
+/**
+ * Add Netlify CMS to a Gatsby project
+ * @param {string} username GitHub username
+ * @param {string} repository GitHub repository
+ */
+const main = async (username, repository) => {
 	await installDependencies()
-	await createNetlifyConfig()
+	await createNetlifyConfig(username, repository)
 }
 
 module.exports = main

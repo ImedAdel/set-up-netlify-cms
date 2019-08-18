@@ -13,6 +13,7 @@
 		"start": "node cli.js"
 	},
 	"dependencies": {
+		"execa": "^2.0.4",
 		"fs-extra": "^8.1.0",
 		"meow": "^5.0.0"
 	}

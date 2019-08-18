@@ -1,5 +1,12 @@
 const fs = require(`fs-extra`)
+const execa = require(`execa`)
 
+const installDependencies = async () => {
+	const { stdout } = await execa('echo', [
+		'yarn add netlify-cms-app gatsby-plugin-netlify-cms',
+	])
+	console.log(stdout)
+}
 const createNetlifyConfig = async () => {
 	const data = `
 		backend:
@@ -24,6 +31,7 @@ const createNetlifyConfig = async () => {
 }
 
 const main = async () => {
+	await installDependencies()
 	await createNetlifyConfig()
 }
 
